@@ -1,11 +1,8 @@
 import React from "react";
+import Board from "./components/GameController";
 
 function App() {
-  return (
-    <>
-      <p>Hola</p>
-    </>
-  );
+  return <Board />;
 }
 
 export default App;
