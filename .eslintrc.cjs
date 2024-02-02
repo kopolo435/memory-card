@@ -20,5 +20,6 @@ module.exports = {
     ],
     "no-console": "off",
     quotes: ["error", "double"],
+    "react/prop-types": [0],
   },
 };
