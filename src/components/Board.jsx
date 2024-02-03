@@ -35,6 +35,7 @@ function Board({
       {shuffledCards.map((data) => (
         <Card
           data={data}
+          key={data.id}
           clickedCards={clickedCards}
           setClickedCards={setClickedCards}
           setScore={setScore}
