@@ -7,7 +7,7 @@ import GameInfo from "./GameInfo";
 function GameController() {
   const [hearts, setHearts] = React.useState(3);
   const [score, setScore] = React.useState(0);
-  const [level, setLevel] = React.useState(1);
+  const [level, setLevel] = React.useState(5);
   const [clickedCards, setClickedCards] = React.useState(new Map());
   const [pokemonData, setPokemonData] = React.useState([]);
   const [levelCards, setLevelCards] = React.useState([]);
@@ -33,15 +33,31 @@ function GameController() {
   }, []);
 
   if (hearts === 0) {
-    return <p>Game Over</p>;
+    return (
+      <main>
+        <p>Game Over</p>
+        <p>Que lastima, no lograste completar el juego</p>
+      </main>
+    );
   }
 
   if (level === 6) {
-    return <p>Game Won</p>;
+    return (
+      <main>
+        <p>Game Won</p>
+        <p>Felicidades, haz completado el juego con exito</p>
+      </main>
+    );
   }
 
   return pokemonData.length > 0 ? (
     <main>
+      <div className="rules">
+        <p>
+          En este juego deberas hacer click en cada pokemon una sola vez por
+          nivel, debes recordar a cuales ya seleccionaste para no fallar.
+        </p>
+      </div>
       <GameInfo
         hearts={hearts}
         level={level}
@@ -57,7 +73,9 @@ function GameController() {
       />
     </main>
   ) : (
-    <p>Cargando</p>
+    <main className="loadingContainer">
+      <p>Cargando</p>
+    </main>
   );
 }
 
