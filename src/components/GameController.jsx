@@ -122,6 +122,9 @@ function GameController() {
   ) : (
     <main className="loadingContainer">
       <p>Cargando</p>
+      <span className="material-symbols-outlined progressCircle">
+        progress_activity
+      </span>
     </main>
   );
 }

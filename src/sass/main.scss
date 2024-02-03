@@ -26,9 +26,24 @@ main {
 }
 
 .loadingContainer {
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.progressCircle {
+  animation: progressCircle 1s linear infinite;
+  font-size: 80px;
+}
+
+@keyframes progressCircle {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .endingContainer {
