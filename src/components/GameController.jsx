@@ -4,6 +4,31 @@ import fetchPokemonData from "../javascript/fetchPokemonData";
 import shuffle from "../javascript/shuffleArray";
 import GameInfo from "./GameInfo";
 
+function PlayAgainBtn({
+  setHearts,
+  setScore,
+  setLevel,
+  setClickedCards,
+  pokemonData,
+  setLevelCards,
+  cardPerLevel,
+}) {
+  function resetGame() {
+    const shuffledPokemons = shuffle(pokemonData);
+    setHearts(3);
+    setScore(0);
+    setLevel(1);
+    setClickedCards(new Map());
+    setLevelCards(shuffledPokemons.slice(0, cardPerLevel[0]));
+  }
+
+  return (
+    <button type="button" className="playAgain" onClick={resetGame}>
+      Play Again
+    </button>
+  );
+}
+
 function GameController() {
   const [hearts, setHearts] = React.useState(3);
   const [score, setScore] = React.useState(0);
@@ -34,18 +59,40 @@ function GameController() {
 
   if (hearts === 0) {
     return (
-      <main>
-        <p>Game Over</p>
-        <p>Que lastima, no lograste completar el juego</p>
+      <main className="endingCardContainer">
+        <div className="endingCard win">
+          <p>Game Over</p>
+          <p>Que lastima, no lograste completar el juego</p>
+          <PlayAgainBtn
+            setClickedCards={setClickedCards}
+            setHearts={setHearts}
+            setLevel={setLevel}
+            setLevelCards={setLevelCards}
+            setScore={setScore}
+            pokemonData={pokemonData}
+            cardPerLevel={cardPerLevel}
+          />
+        </div>
       </main>
     );
   }
 
   if (level === 6) {
     return (
-      <main>
-        <p>Game Won</p>
-        <p>Felicidades, haz completado el juego con exito</p>
+      <main className="endingCardContainer">
+        <div className="endingCard win">
+          <p>Game Won</p>
+          <p>Felicidades, haz completado el juego con exito</p>
+          <PlayAgainBtn
+            setClickedCards={setClickedCards}
+            setHearts={setHearts}
+            setLevel={setLevel}
+            setLevelCards={setLevelCards}
+            setScore={setScore}
+            pokemonData={pokemonData}
+            cardPerLevel={cardPerLevel}
+          />
+        </div>
       </main>
     );
   }
