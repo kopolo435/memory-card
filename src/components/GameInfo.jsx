@@ -1,7 +1,9 @@
 import React from "react";
 import "../css/gameInfo.css";
 
-function GameInfo({ hearts, level, currentScore, maxScore }) {
+function GameInfo({
+  hearts, level, currentScore, maxScore,
+}) {
   return (
     <div className="gameInfo">
       <div className="heartInfo">
@@ -32,13 +34,18 @@ function GameInfo({ hearts, level, currentScore, maxScore }) {
       </div>
       <p>
         Nivel:
-        <span> {level}</span>
+        <span>
+          {" "}
+          {level}
+        </span>
       </p>
       <p>
         Score:
         <span>
           {" "}
-          {currentScore}/{maxScore}
+          {currentScore}
+          /
+          {maxScore}
         </span>
       </p>
     </div>
