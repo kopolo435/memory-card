@@ -19,6 +19,16 @@ header {
 
 main {
   flex: 1;
+  padding: 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.loadingContainer {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 footer {
