@@ -1,6 +1,7 @@
 import React from "react";
 import Board from "./Board";
 import fetchPokemonData from "../javascript/fetchPokemonData";
+import shuffle from "../javascript/shuffleArray";
 
 function GameController() {
   const [hearts, setHearts] = React.useState(3);
@@ -8,10 +9,13 @@ function GameController() {
   const [level, setLevel] = React.useState(1);
   const [clickedCards, setClickedCards] = React.useState(new Map());
   const [pokemonData, setPokemonData] = React.useState([]);
+  const [levelCards, setLevelCards] = React.useState([]);
 
   const cardPerLevel = [2, 4, 6, 8, 10]; // almacena el score y cartas posible de cada nivel
 
   if (score === cardPerLevel[level - 1]) {
+    const shuffledPokemons = shuffle(pokemonData);
+    setLevelCards(shuffledPokemons.slice(0, cardPerLevel[level]));
     setLevel((currentLevel) => currentLevel + 1);
     setClickedCards(new Map());
     setScore(0);
@@ -19,9 +23,10 @@ function GameController() {
 
   React.useEffect(() => {
     const getPokemons = async () => {
-      const pokemon = await fetchPokemonData();
-      setPokemonData(pokemon);
-      console.log(pokemon);
+      const pokemons = await fetchPokemonData();
+      const shuffledPokemons = shuffle(pokemons);
+      setPokemonData(pokemons);
+      setLevelCards(shuffledPokemons.slice(0, cardPerLevel[level - 1]));
     };
     getPokemons();
   }, []);
@@ -36,8 +41,7 @@ function GameController() {
 
   return pokemonData.length > 0 ? (
     <Board
-      cardsData={pokemonData}
-      levelCardAmmount={cardPerLevel[level - 1]}
+      cardsData={levelCards}
       clickedCards={clickedCards}
       setClickedCards={setClickedCards}
       setHearts={setHearts}
