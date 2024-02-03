@@ -1,8 +1,9 @@
 import React from "react";
-import Board from "./components/GameController";
+import GameController from "./components/GameController";
+import "./css/main.css";
 
 function App() {
-  return <Board />;
+  return <GameController />;
 }
 
 export default App;
