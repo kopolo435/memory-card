@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "./Card";
 import shuffle from "../javascript/shuffleArray";
+import "../css/board.css";
 
 function Board({
   cardsData,
