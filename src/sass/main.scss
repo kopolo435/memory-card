@@ -1,5 +1,6 @@
 :root {
   --red-500: hsl(0, 100%, 59%);
+  --red-400: hsl(0, 100%, 59%);
   --red-50: hsl(0, 100%, 97%);
   --red-900: hsl(0, 100%, 10%);
 
@@ -11,6 +12,7 @@
   --purple-500: hsl(270, 100%, 50%);
   --purple-900: hsl(270, 100%, 10%);
 
+  --skyblue-50: #f4ffff;
   --skyblue-100: hsl(180, 100%, 90%);
   --skyblue-500: hsl(180, 100%, 59%);
   --skyblue-900: hsl(180, 69%, 12%);
@@ -25,22 +27,28 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-color: var(--skyblue-50);
+  gap: 20px;
 }
 
 header {
   display: flex;
   justify-content: center;
+  padding: 10px;
   h1 {
     font-size: 22px;
+    color: var(--purple-50);
   }
+  background-color: var(--red-500);
 }
 
 main {
   flex: 1;
-  padding: 20px 20px;
+  padding: 0px 20px 10px 20px;
   display: flex;
   flex-direction: column;
   gap: 30px;
+  position: relative;
 }
 
 .loadingContainer {
@@ -78,4 +86,11 @@ main {
 footer {
   display: flex;
   justify-content: center;
+  background-color: var(--red-500);
+  padding: 10px;
+  gap: 10px;
+  color: var(--purple-50);
+  a {
+    color: var(--purple-50);
+  }
 }

@@ -4,6 +4,12 @@
   display: flex;
   justify-content: center;
   gap: 6vw;
+  position: sticky;
+  top: 0;
+  background: var(--skyblue-50);
+  p {
+    align-self: center;
+  }
 }
 
 .heartInfo {
@@ -11,6 +17,14 @@
   gap: 10px;
   p {
     align-self: center;
+  }
+}
+
+.rules {
+  display: flex;
+  justify-content: center;
+  p {
+    max-width: 35em;
   }
 }
 
