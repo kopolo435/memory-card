@@ -36,8 +36,11 @@
   }
 }
 
-.pokemonCard:hover {
+.pokemonCard:hover,
+.pokemonCard:focus,
+.pokemonCard:focus-visible {
   transform: scale(110%, 110%);
+  outline: 2px solid var(--purple-500);
 }
 
 .pokemonCard.valid {
