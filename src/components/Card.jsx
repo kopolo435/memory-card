@@ -28,12 +28,16 @@ function Card({ data, clickedCards, setClickedCards, setHearts, setScore }) {
   return (
     <button
       className={`pokemonCard ${
-        isCorrect !== null && isCorrect === true ? "valid" : "wrong"
+        (isCorrect === true && "valid") ||
+        (isCorrect === false && "wrong") ||
+        ""
       }`}
       type="button"
       onClick={handleCardClick}
     >
-      <img src={data.img} alt={data.name} />
+      <div className="imgContainer">
+        <img src={data.img} alt={data.name} />
+      </div>
       <p>{data.name}</p>
     </button>
   );

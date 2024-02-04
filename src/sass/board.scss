@@ -34,6 +34,20 @@
   }
 }
 
+.pokemonCard.valid {
+  border: 2px solid var(--green-500);
+  .imgContainer {
+    background-color: var(--green-500);
+  }
+}
+
+.pokemonCard.wrong {
+  border: 2px solid #ffff00;
+  .imgContainer {
+    background-color: #ffff00;
+  }
+}
+
 .imgContainer {
   width: 100%;
   background-color: white;
