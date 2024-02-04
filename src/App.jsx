@@ -6,12 +6,16 @@ function App() {
   return (
     <>
       <header>
-        <h1>Memory Game</h1>
+        <h1>Pokemon memory Game</h1>
       </header>
       <GameController />
       <footer>
-        <p>Made by</p>
-        <a href="https://github.com/kopolo435/memory-card">@Kopolo435</a>
+        <p>Made by </p>
+
+        <div className="iconLinkContainer">
+          <i className="devicon-github-original" />
+          <a href="https://github.com/kopolo435/memory-card">@Kopolo435</a>
+        </div>
       </footer>
     </>
   );
