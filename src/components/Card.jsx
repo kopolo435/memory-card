@@ -1,5 +1,20 @@
 import React from "react";
 
+function capitalizeFirstLetter(inputString) {
+  // Check if the input is a valid string
+  if (typeof inputString !== "string" || inputString.length === 0) {
+    return inputString;
+  }
+
+  // Uppercase the first letter and concatenate the rest of the string
+  return inputString.charAt(0).toUpperCase() + inputString.slice(1);
+}
+
+// Example usage:
+const originalString = "hello world";
+const capitalizedString = capitalizeFirstLetter(originalString);
+console.log(capitalizedString);
+
 function Card({ data, clickedCards, setClickedCards, setHearts, setScore }) {
   const [isCorrect, setIsCorrect] = React.useState(null);
   function handleCardClick() {
@@ -38,7 +53,7 @@ function Card({ data, clickedCards, setClickedCards, setHearts, setScore }) {
       <div className="imgContainer">
         <img src={data.img} alt={data.name} />
       </div>
-      <p>{data.name}</p>
+      <p>{capitalizeFirstLetter(data.name)}</p>
     </button>
   );
 }
