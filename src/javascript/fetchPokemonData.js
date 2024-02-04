@@ -30,6 +30,7 @@ async function fetchPokemonData() {
     getPokemonData("psyduck"),
     getPokemonData("bellsprout"),
     getPokemonData("arcanine"),
+    getPokemonData("reshiram"),
   ]);
 }
 
