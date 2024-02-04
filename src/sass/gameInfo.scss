@@ -3,12 +3,13 @@
 .gameInfo {
   display: flex;
   justify-content: center;
-  gap: 6vw;
+  gap: 4vw;
   position: sticky;
   top: 0;
   background: var(--skyblue-50);
   p {
     align-self: center;
+    font-weight: 700;
   }
 }
 
@@ -46,5 +47,28 @@
 @media screen and (min-width: 530px) {
   .gameInfo {
     gap: 20vw;
+    p {
+      font-size: 16px;
+    }
+  }
+
+  .rules {
+    p {
+      font-size: 16px;
+    }
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .rules {
+    p {
+      font-size: 18px;
+    }
+  }
+
+  .gameInfo {
+    p {
+      font-size: 18px;
+    }
   }
 }
