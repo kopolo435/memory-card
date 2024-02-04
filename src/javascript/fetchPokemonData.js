@@ -22,6 +22,14 @@ async function fetchPokemonData() {
     getPokemonData("munchlax"),
     getPokemonData("magikarp"),
     getPokemonData("dratini"),
+    getPokemonData("vulpix"),
+    getPokemonData("machop"),
+    getPokemonData("geodude"),
+    getPokemonData("jigglypuff"),
+    getPokemonData("bulbasaur"),
+    getPokemonData("psyduck"),
+    getPokemonData("bellsprout"),
+    getPokemonData("arcanine"),
   ]);
 }
 
