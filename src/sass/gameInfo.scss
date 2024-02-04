@@ -10,6 +10,8 @@
   p {
     align-self: center;
     font-weight: 700;
+    color: var(--red-900);
+    font-family: "Roboto", sans-serif;
   }
 }
 
@@ -26,6 +28,8 @@
   justify-content: center;
   p {
     max-width: 35em;
+    color: var(--red-900);
+    font-family: "Roboto", sans-serif;
   }
 }
 
@@ -59,14 +63,16 @@
   }
 }
 
-@media screen and (min-width: 900px) {
-  .rules {
+@media screen and (min-width: 700px) {
+  .gameInfo {
     p {
-      font-size: 18px;
+      font-size: 20px;
     }
   }
+}
 
-  .gameInfo {
+@media screen and (min-width: 900px) {
+  .rules {
     p {
       font-size: 18px;
     }
