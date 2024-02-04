@@ -10,8 +10,8 @@ function App() {
       </header>
       <GameController />
       <footer>
-        Made by
-        <a href="https://github.com/kopolo435/memory-card"> @Kopolo435</a>
+        <p>Made by</p>
+        <a href="https://github.com/kopolo435/memory-card">@Kopolo435</a>
       </footer>
     </>
   );

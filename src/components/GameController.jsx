@@ -32,7 +32,7 @@ function PlayAgainBtn({
 function GameController() {
   const [hearts, setHearts] = React.useState(3);
   const [score, setScore] = React.useState(0);
-  const [level, setLevel] = React.useState(5);
+  const [level, setLevel] = React.useState(1);
   const [clickedCards, setClickedCards] = React.useState(new Map());
   const [pokemonData, setPokemonData] = React.useState([]);
   const [levelCards, setLevelCards] = React.useState([]);
@@ -61,7 +61,7 @@ function GameController() {
     return (
       <main className="endingCardContainer">
         <div className="endingCard win">
-          <p>Game Over</p>
+          <h2>Game Over</h2>
           <p>Que lastima, no lograste completar el juego</p>
           <PlayAgainBtn
             setClickedCards={setClickedCards}
@@ -81,7 +81,7 @@ function GameController() {
     return (
       <main className="endingCardContainer">
         <div className="endingCard win">
-          <p>Game Won</p>
+          <h2>Game Won</h2>
           <p>Felicidades, haz completado el juego con exito</p>
           <PlayAgainBtn
             setClickedCards={setClickedCards}
