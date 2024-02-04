@@ -10,11 +10,6 @@ function capitalizeFirstLetter(inputString) {
   return inputString.charAt(0).toUpperCase() + inputString.slice(1);
 }
 
-// Example usage:
-const originalString = "hello world";
-const capitalizedString = capitalizeFirstLetter(originalString);
-console.log(capitalizedString);
-
 function Card({ data, clickedCards, setClickedCards, setHearts, setScore }) {
   const [isCorrect, setIsCorrect] = React.useState(null);
   function handleCardClick() {
