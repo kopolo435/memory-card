@@ -2,6 +2,7 @@ import React from "react";
 import Board from "./Board";
 import fetchPokemonData from "../javascript/fetchPokemonData";
 import shuffle from "../javascript/shuffleArray";
+import progressCircle from "../assets/progress-activity.svg";
 import GameInfo from "./GameInfo";
 
 function PlayAgainBtn({
@@ -122,9 +123,7 @@ function GameController() {
   ) : (
     <main className="loadingContainer">
       <p>Cargando</p>
-      <span className="material-symbols-outlined progressCircle">
-        progress_activity
-      </span>
+      <img src={progressCircle} className="progressCircle" alt="" />
     </main>
   );
 }
